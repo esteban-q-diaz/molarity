@@ -6,11 +6,11 @@ For this project I used a single-page design created by UX/UI Designer Kathy Hon
 
 # Demo:
 
-### Calcualte the mass:
+### Calculate the mass:
 ![](https://molarity.s3-us-west-1.amazonaws.com/mass.gif)
 
 
-### Calcualte the volume:
+### Calculate the volume:
 ![](https://molarity.s3-us-west-1.amazonaws.com/volume.gif)
 
 # Original Design by [Kathy Hong](https://www.kathyhong.com):
