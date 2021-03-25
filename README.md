@@ -5,9 +5,9 @@
 For this project I used a single-page design created by UX/UI Designer Kathy Hong ([KathyHong.com](https://www.kathyhong.com)).
 
 # Demo:
+![](https://molarity.s3-us-west-1.amazonaws.com/mass.gif)
 
-
-![](https://im4.ezgif.com/tmp/ezgif-4-13ba2b191d2c.gif)
+![](https://molarity.s3-us-west-1.amazonaws.com/volume.gif)
 
 # Original Design by [Kathy Hong](https://www.kathyhong.com):
 
