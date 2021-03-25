@@ -5,7 +5,55 @@ import { StyleSheet, Text, View, Image, ImageBackground, TextInput, TouchableOpa
 const image = { uri: 'https://molarity.s3-us-west-1.amazonaws.com/molarity_bg.png'}
 
 export default function App() {
+  let [mole, setMole] = useState('')
+  let [mass, setMass] = useState()
+  let [volume, setVolume] = useState('')
+  let [concentration, setConcentration] = useState('')
 
+  const setMoleValue = (value, a, b, c) => {
+    setMole(mole = value)
+  }
+  const setMassValue = (value, a, b, c) => {
+    if (value === null) {
+      let massCalulataion = Number(a) * (Number(b) / 1000) * Number(c)
+      setMass(mass = massCalulataion.toString())
+    } else {
+      setMass(mass = value)
+    }
+  }
+  const setVolumeValue = (value, a, b, c) => {
+    if (value === null) {
+      console.log(a, b, c)
+      let volumeCalulataion = (Number(a) / Number(b)) * Number(c)
+      if (volumeCalulataion.toString().length > 5) {
+        let finalVolume = (Math.round(volumeCalulataion * 10) / 10) * 1000
+        setVolume(volume = finalVolume.toString())
+      } else {
+        volumeCalulataion = volumeCalulataion * 1000
+        setVolume(volume = volumeCalulataion.toString())
+      }
+    } else {
+      setVolume(volume = value)
+    }
+
+  }
+  const setConcentrationValue = (value, calculate) => {
+    setConcentration(concentration = value)
+    if (mass === '') {
+      setMassValue(null, concentration, volume, mole)
+    }
+
+    if (volume === '') {
+      setVolumeValue(null, concentration, mole, mass)
+    }
+  }
+
+  const clearAll = () => {
+    setMole(mole = '')
+    setMass(mass = '')
+    setVolume(volume = '')
+    setConcentration(concentration = '')
+  }
 
   return (
     <View style={styles.container}>
@@ -34,6 +82,8 @@ export default function App() {
             style={styles.molecular}
             placeholder='Type'
             maxLength={5}
+            value={mole}
+            onChangeText={(text)=> setMoleValue(text)}
           />
         </View>
 {/* MASS */}
@@ -47,6 +97,9 @@ export default function App() {
           <TextInput
           style={styles.mass}
           placeholder='Type'
+          maxLength={5}
+          value={mass}
+          onChangeText={(text)=> setMassValue(text)}
           />
         </View>
 
@@ -59,6 +112,9 @@ export default function App() {
         <TextInput
         style={styles.mass}
         placeholder='Type'
+        maxLength={5}
+        value={volume}
+        onChangeText={(text)=> setVolumeValue(text)}
         />
       </View>
 {/* Concentration */}
@@ -70,12 +126,16 @@ export default function App() {
         <TextInput
         style={styles.mass}
         placeholder='Type'
+        maxLength={5}
+        value={concentration}
+        onChangeText={(text)=> setConcentrationValue(text)}
         />
       </View>
 
         <View style={styles.clear}>
           <TouchableOpacity
             style={styles.button}
+            onPress={() => clearAll()}
           >
 
 {/* Clear all */}
