@@ -7,7 +7,7 @@ For this project I used a single-page design created by UX/UI Designer Kathy Hon
 # Demo:
 
 
-![](https://inflatableimg.s3-us-west-1.amazonaws.com/inflatable2.gif)
+![](https://im4.ezgif.com/tmp/ezgif-4-13ba2b191d2c.gif)
 
 # Original Design by [Kathy Hong](https://www.kathyhong.com):
 
